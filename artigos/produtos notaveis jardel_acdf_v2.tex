@@ -1,0 +1,635 @@
+
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}  
+% Pode melhorar a aparência diminuindo o tamanho do texto. A última linha está muito próxima do número.
+\usepackage[pdftex]{color, graphicx}
+% adiciona o comando \textcolor{cor em ingles}{texto a ser colorido}.
+%opções de cores: red, cyan, orange, teal, blue, yellow, gray, green
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amssymb}
+%\usepackage{indentfirst} preferi não utilizar o espaçamento no inicio de cada parágrafo
+\setlength{\parskip}{1em} %defini o espaçamento entre parágrafos para ser aprox. o de um 'm' da fonte utilizada
+\usepackage[pdftex]{hyperref}
+%pacote acima permite referenciar links com \url{link} e \href{link que nao aparecerá}{texto que o usuario clica pra entrar no site}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{ }
+\rfoot{\thepage}
+\rhead{ }
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage[brazil]{babel}
+
+% o pacote e comandos acima adicionam uma barra no header e no footer da pagina além de permitir customizações. exemplo de comandos: \lhead{} \chead{} \rhead{\bfseries The performance of new graduates} \lfoot{From: K. Grant}  \cfoot{To: Dean A. Smith} \rfoot{\thepage} \renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0.4pt}. \url{http://www.ntg.nl/maps/16/29.pdf} pág. 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  TAREFA DO Prof. André Costa prof.andrecosta@recife.ifpe.edu.br
+%  Residência Pedagógica jan.2021                          
+%
+
+\title{Produtos notáveis: Uma Poderosa Ferramenta para Simplificar Meus Cálculos}
+\author{Jardel Felipe Cabral dos Santos }
+\date{07 de Janeiro de 2021}
+
+
+
+\begin{document}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                              INTRODUÇÃO
+\thispagestyle{fancy} 
+\section{Introdução}
+
+
+Esse texto foi feito a pedido do professor André Costa, preceptor do Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco (IFPE) pelo Programa Institucional de Residência Pedagógica da Universidade Federal de Pernambuco (UFPE) do curso de Licenciatura em Matemática do campus Recife em 2020. 
+
+\noindent O texto será dividido em 5 seções (além da introdução e das referências) e cada seção poderá conter exercícios ou problemas para o leitor resolver, se assim desejar. %(fica a critério do leitor): achei essa parte redundante.
+ As respostas para os exercícios e questões estarão presentes no final de cada seção. Algumas partes do texto podem ser um pouco difíceis de se entender numa primeira leitura, se esse for o caso, por favor, não hesite em tentar ler novamente.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                              UM PROBLEMA OLÍMPICO
+
+\section{Um problema olímpico}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                     PROBLEMA  OLÍMPICO 
+    
+
+
+\begin{flushleft}
+Se \(a - b = 1\) e \(ab = 1\), qual é o valor de \(a^2 + b^2\)?  %troquei   $ ... $ por \( ... \) com ajuda do Crtl + F
+
+(A) 1
+
+(B) 2
+
+(C) 3
+
+(D) 4   
+
+(E) 5
+
+\end{flushleft}    
+    
+
+\noindent 
+
+%\noindent Se   \(a - b = 1  \( e   \(ab = 1  \(, qual é o valor de   \(a^2 + b^2  \(?   (linha repetida)
+
+\noindent Esse problema foi extraído da prova da 1ª fase da Olimpíada Brasileira de Matemática das Escolas Públicas (OBMEP) do ano de 2017. Você consegue resolvê-lo? Fique à vontade se quiser tentar. Apresentarei uma resolução para ele logo abaixo. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                          FERRAMENTAS
+
+\noindent %modifiquei a frase pois estava soando estranha
+%Antes de começar com a resolução, apresentarei três ferramentas que iremos utilizar:  
+%\begin{itemize}
+
+   %\item Propriedades da igualdade:
+    %Se \(x\), \(y\) e \(z\) são variáveis que representam números reais e \(x = y\), então:
+        %\begin{enumerate}
+            %\item   \(x + z = y + z\)
+           % \item   \(x - z = y - z\)  
+           % \item   \(x\cdot{z} = y\cdot{z}\)
+          %  \item   \(\dfrac{x}{z} = \dfrac{y}{z}\), desde que   \(z \neq 0\). \\  %substitui \frac{}{} por \dfrac{}{}
+            
+     %   \end{enumerate}
+        
+%    \item Propriedade distributiva da multiplicação: \\
+    
+%    Se   \(x\), \(y\) e \(z\) são variáveis que representam números reais, então \(x\cdot{(y+z)}=x\cdot{y}+x\cdot{z}\)  \\ %"\\" serve para quebrar uma linha. a linha seguinte não terá o espaçamento no inicio de um parágrafo.
+    
+  %  \item Fórmula de resolução de equações do segundo grau: \\ %substitui formula de Bhaskara pela atual frase
+    
+    %Apesar de ser conhecida como a fórmula de Bhaskara, não foi Bhaskara que a descobriu. 
+ %   As soluções \(x_{1}\) e   \(x_2\) de uma equação polinomial do segundo grau \(ax^2 + bx + c = 0\), onde   \(a\), \(b\) e \(c\) são números reais e \(a \neq 0\), podem ser encontradas da seguinte forma: 
+    
+    
+  %    \[x_{1} = \dfrac{-b + \sqrt{b^2 - 4ac}}{2a}  \quad\mbox{e}\quad
+    %  x_{2} = \dfrac{-b - \sqrt{b^2 - 4ac}}{2a}\]  
+
+% \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                    RESOLUÇÃO
+
+\noindent \textbf{Resolução:}  
+
+\noindent Vamos tentar encontrar os valores de   \(a\) e de \(b\) para calcular o valor de \(a^2 + b^2\). Por questão de conveniência, denominaremos a equação \(a - b = 1\) de equação (i) e a equação \(ab = 1\) de equação (ii). %Como as variáveis   \(a  \( e   \(b  \( representam números reais, podemos utilizar a propriedade 1 da igualdade utilizando   \(t = a - b  \(,   \(u = 1  \( e   \(v = b  \(. (Resolvi remover essa parte pois, considerei uma minúcia desnecessaria%
+Somando \(b\) nos dois lados da equação (i), obteremos:   \(a - b + b = 1 + b\). Podemos reescrever essa equação como  \(a = 1 + b\) e % pois   \(-b + b = 0  \(. 
+chamaremos essa equação de (iii).   
+
+\noindent %Note que a equação (iii) nos diz que   \(a = 1 + b  \(. (achei redundante)% 
+Substituindo o valor de  \(a\) da equação (iii) na equação (ii), obtemos: \((1 + b)\cdot{b} = 1\)  
+
+%Utilizando a propriedade distributiva da multiplicação para quando   \(x = b  \(,   \(y = 1  \( e   \(z = b  \( (considerei desnecessário esse trecho%
+
+\noindent Efetuando a multiplicação presente no lado esquerdo da equação, encontraremos a equação %  \((1 + b)\cdot{b} = %
+%\(1\cdot{b} + b\cdot{b} = 1\) e podemos reescrevê-la  como  
+\[b^2 + b = 1\] 
+\noindent Subtraindo 1 nos dois lados dessa equação, obteremos: %dade 2 da igualdade, de modo semelhante ao que fizemos anteriormente com a equação (i), para obtermos a equação (considerei desnecessário)% 
+  \(b^2 + b - 1 = 0\). 
+
+\noindent A equação acima é uma equação polinomial do segundo grau (ou simplesmente: equação do segundo grau) que tem como incógnita   \(b\) ao invés de \(x\). Podemos utilizar a fórmula de resolução de equações do segundo grau para calcular suas soluções. Vamos ter que:  
+
+   \(b_{1} = \dfrac{-1 + \sqrt{1^2 - 4\cdot{1}\cdot{(-1)}}}{2\cdot{1}} = \dfrac{-1 + \sqrt{1 - (-4)}}{2} = \dfrac{-1 + \sqrt{1 + 4}}{2} = \dfrac{-1 + \sqrt{5}}{2}\)   
+ 
+ 
+ \noindent Analogamente, \(b_{2} = \dfrac{-1 - \sqrt{5}}{2}\). % Você pode verificar que (modifiquei de modo a virar uma pergunta para o leitor)% 
+ 
+
+ 
+ %\noindent \textbf{Pergunta:} Quanto vale \(b_2\)?
+ %Resposta:   \(b_{2} = \dfrac{-1 - \sqrt{5}}{2}  \(.% Movi as respostas para o final da seção 
+ 
+
+ 
+ \noindent Assim, achamos os valores de \(b\) que satisfazem as equações dadas inicialmente. Utilizaremos a equação (iii) para encontrar os valores para   \(a\). 
+ 
+ \noindent Cada valor de   \(b\) estará associado com um valor de \(a\). Desse modo,   \(a_{1} = 1 + b_{1}\) e   \(a_{2} = 1 + b_{2}\). 
+ 
+ \noindent Logo: 
+ 
+   \(a_{1} = 1 + \dfrac{-1 + \sqrt{5}}{2} = (\dfrac{2}{2}) + \dfrac{-1 + \sqrt{5}}{2} = \dfrac{2}{2} + \dfrac{-1 + \sqrt{5}}{2} = \dfrac{2 + (-1 + \sqrt{5})}{2} = \dfrac{2 - 1 + \sqrt{5}}{2}\) \\
+ 
+ \noindent Então, \quad \(a_{1} =  \dfrac{1 + \sqrt{5}}{2}\).  Você pode verificar que \(a_{2} = \dfrac{1 - \sqrt{5}}{2}\). \\
+ 
+ %Você pode verificar que ... (modifiquei de modo a virar uma pergunta para o leitor)%  
+ 
+% \noindent \textbf{Pergunta:} Quanto vale \(a_2\)?
+ % Resposta:   \(a_{2} = \dfrac{1 - \sqrt{5}}{2}  \(.  (Movi as respostas para o final da seção)
+ 
+ 
+ \noindent Agora que encontramos os valores de \(a\) e \(b\), basta calcularmos o valor da expressão   \(a^2 + b^2\). Porém, como existem dois valores para \(a\) e para \(b\), precisaremos calcular o valor da expressão para quando \(a = a_{1}\) e   \(b = b_{1}\), mas também para quando   \(a = a_{2}\)  e   \(b = b_{2}\). 
+
+ \begin{itemize}
+     \item   \(a = a_{1}\) e \(b = b_{1}\): 
+  \end{itemize}
+    
+  \noindent  \(a^2 + b^2 = (\dfrac{1 + \sqrt{5}}{2})^2 + (\dfrac{-1 + \sqrt{5}}{2})^2 = (\dfrac{1}{4}) + 2\cdot{(\dfrac{\sqrt{5}}{4})}  + (\dfrac{\sqrt{25}}{4}) + (\dfrac{1}{4}) - 2\cdot{(\dfrac{\sqrt{5}}{4})}  + (\dfrac{\sqrt{25}}{4}) = \\ \\ (\dfrac{1}{4}) + (\dfrac{5}{4}) + (\dfrac{1}{4}) + (\dfrac{5}{4}) = \dfrac{12}{4} = 3\)  \\
+     
+    
+      % a_{1}^2 + b_{1}^2=  = (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})^2 + (\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})^2 = (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{(\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})} + \\ \\ (\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})\cdot{(\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})} = (\dfrac{1}{2})\cdot{(\dfrac{1}{2})} + (\dfrac{1}{2})\cdot{(\dfrac{\sqrt{5}}{2})} +  (\dfrac{\sqrt{5}}{2})\cdot{(\dfrac{1}{2})} +  (\dfrac{\sqrt{5}}{2})\cdot{(\dfrac{\sqrt{5}}{2})} + \\ \\ (\dfrac{-1}{2})\cdot{(\dfrac{-1}{2})} + (\dfrac{-1}{2})\cdot{(\dfrac{\sqrt{5}}{2})} +  (\dfrac{\sqrt{5}}{2})\cdot{(\dfrac{-1}{2})} +  (\dfrac{\sqrt{5}}{2})\cdot{(\dfrac{\sqrt{5}}{2})} = (\dfrac{1}{4}) + (\dfrac{\sqrt{5}}{4}) + (\dfrac{\sqrt{5}}{4}) +  (\dfrac{\sqrt{5\cdot{5}}}{4}) + \\ \\ (\dfrac{1}{4}) + (\dfrac{-\sqrt{5}}{4}) + (\dfrac{-\sqrt{5}}{4}) +  (\dfrac{\sqrt{5\cdot{5}}}{4}) = %
+     
+     %Note que   \((\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})^2 = (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{(\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})}  \(. 
+     
+     %Para calcular esse produto, podemos utilizar a propriedade distributiva da multiplicação onde   \(x = \dfrac{1}{2} + \dfrac{\sqrt{5}}{2}  \(,   \(y = \dfrac{1}{2}  \( e   \(z = \dfrac{\sqrt{5}}{2}  \(.  . 
+     
+     %Daí, temos que:  
+     
+     %  \((\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{(\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})} = (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{1}{2}} + (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{\sqrt{5}}{2}}  \(. 
+     
+     %Aplicando novamente a propriedade distributiva da multiplicação para   \((\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{1}{2}}  \( e depois para   \((\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{\sqrt{5}}{2}}  \(, teremos que:  
+     
+     %  \((\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{1}{2}} + (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})\cdot{\dfrac{\sqrt{5}}{2}} =
+     
+      
+     
+     %  \((\dfrac{1\cdot{1}}{2\cdot{2}}) + (\dfrac{1\cdot{\sqrt{5}}}{2\cdot{2}}) +  (\dfrac{\sqrt{5}\cdot{1}}{2\cdot{2}}) +  (\dfrac{\sqrt{5}\cdot{\sqrt{5}}}{2\cdot{2}}) = 
+     
+     
+     %\dfrac{1}{4} + \dfrac{2\cdot{\sqrt{5}}}{4}  + \dfrac{5}{4} = \dfrac{1 + 2\cdot{\sqrt{5}} + 5}{4} =   \( 
+     
+     %  \(\dfrac{6 + 2\cdot{\sqrt{5}}}{4}  \(. 
+     
+     %Analogamente, teremos   \((\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})^2 = (\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})\cdot{(\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})} = \dfrac{6 - 2\cdot{\sqrt{5}}}{4}  \(. 
+     
+     %Assim,  
+     
+     %  \(a^2 + b^2 = (\dfrac{1}{2} + \dfrac{\sqrt{5}}{2})^2 + (\dfrac{-1}{2} + \dfrac{\sqrt{5}}{2})^2 = \dfrac{6 + 2\cdot{\sqrt{5}}}{4} + \dfrac{6 - 2\cdot{\sqrt{5}}}{4} = \dfrac{6 + 2\cdot{\sqrt{5}} + (6 - 2\cdot{\sqrt{5}})}{4} =  \( 
+     
+     %  \(\dfrac{6 + 2\cdot{\sqrt{5}} + 6 - 2\cdot{\sqrt{5}}}{4} = \dfrac{12}{4} = 3  \(. 
+   \begin{itemize}
+     
+    
+     \item   \(a = a_{2}\) e   \(b = b_{2}\): 
+     
+     
+  
+ \end{itemize}
+ 
+ \noindent Você pode verificar que para esse caso também teremos \(a^2 + b^2 = 3\).
+  
+  % \noindent \textbf{Pergunta:} Quanto vale \(a^2 + b^2\) para esse caso e qual a resposta do problema olímpico?  \\
+    
+ 
+ 
+ 
+% \noindent \textbf{Respostas:}
+%\begin{flushleft}
+
+%1. \(b_{2} = \dfrac{-1 - \sqrt{5}}{2}\).
+
+%2. \(a_{2} = \dfrac{1 - \sqrt{5}}{2}\).
+
+\noindent Logo, a resposta do problema é \(a^2 + b^2 = 3\). A alternativa C.
+
+%\end{flushleft}
+
+  
+ % Logo, a resposta do problema é     \(a^2 + b^2 = 3  \(, o que corresponde  à alternativa C.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                              O QUE SÃO OS PRODUTOS NOTÁVEIS?
+
+\section{O que são os produtos notáveis?}
+
+\noindent Alguns de vocês podem indagar: %as aspas duplas são abertas com `` (duplo acento grave) e fechadas com '' (duplo apóstrofo).%
+``\textit{Tá, é uma forma de resolver o problema, mas eu fiz de uma maneira muito mais simples e rápida!}''. Concordo, a resolução apresentada é extensa e existem outras formas de se resolver o problema. Acho importante destacar que a melhor resolução de um problema é aquela que melhor se adequa as suas necessidades e aquela que você se sente confortável fazendo.  
+
+\noindent Meu objetivo apresentando a resolução acima é de trazer a tona o papel que os produtos notáveis tem na matemática.   
+
+\noindent Mas o que seria um produto notável? para responder essa pergunta, vamos calcular o produto   \((x+y)^2\), onde   \(x\) e  \(y\) são variáveis que representam números reais e podem assumir o valor que quisermos: 
+
+\noindent  \((x+y)^2 = (x+y)\cdot{(x+y)} =  x^2 + xy + xy + y^2 = x^2 + 2\cdot{(xy)} + y^2 = x^2 + 2xy + y^2\)
+
+
+%x\cdot{(x+y)} + y\cdot{(x+y)} = x\cdot{x} + x\cdot{y} +  y\cdot{x} + y\cdot{y} = x^2 + xy + yx + y^2 =%
+
+\noindent Ou seja, 
+  \((x+y)^2 = x^2 + 2xy + y^2\). 
+
+\noindent A vantagem de ter calculado o produto com variáveis ao invés de números é que o ge\-ne\-ra\-li\-za\-mos. Utilizamos as variáveis   \(x\) e \(y\), mas poderíamos ter utilizado ser qualquer variável. Agora, sempre que identificarmos um produto que pode ser escrito como   \((x+y)^2\), podemos utilizar o resultado obtido acima para simplificar nossos cálculos e evitar ter que toda vez fazer todos os cálculos acima.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                    EXEMPLO 1 DA SEÇÃO 3
+
+\noindent Por exemplo: Vamos calcular   \((3r - 5s)^2\). 
+
+\noindent Note que se atribuirmos valores para   \(x\) e para \(y\) de modo que \(x = 3r\) e \(y = -5s\), nosso produto \((3r - 5s)^2\) se torna \((x + y)^2\), um produto que já conhecemos seu resultado: \(x^2 + 2xy + y^2\). Substituindo de volta os valores de \(x\) e de \(y\), teremos: 
+
+\((3r)^2 + 2\cdot{3r}\cdot{(-5s)} + (-5s)^2 = 9r^2 + (-30rs) + 25s^2 = 9r^2 - 30rs + 25s^2\)
+
+\noindent Você pode verificar se o resultado está correto ao tentar calcular esse produto utilizando a propriedade distributiva da multiplicação. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                        EXEMPLO 2 DA SEÇÃO 3
+
+\noindent Também podemos utilizar o produto notável \((x+y)^2\) para calcular o quadrado de um número. Por exemplo: Vamos calcular   \(16^2\): 
+
+\noindent Note que \(16\) pode ser escrito como \(10 + 6\), assim, podemos atribuir o valor \(10\) para \(x\) e o valor \(6\) para \(y\). Desse modo, temos que: \((x+y)^2 = (10+6)^2 = (10)^2 + 2\cdot{10}\cdot{(6)} + (6)^2 = 100 + 120 + 36 = 256\). Você pode verificar numa calculadora se o resultado está correto.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                            PERGUNTA 3.1
+
+\noindent \textbf{Pergunta:} Se atribuíssemos o valor \(6\) para \(x\) e o valor \(10\) para \(y\) o resultado seria o mesmo? Por quê? 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%adicinei um "por quê?" no final da pergunta
+
+\noindent %Observação: ... (Resolvi continuar com o texto corrido e removi esse trecho) %
+É importante destacar que somos nós que escolhemos valores para   \(x\) e para \(y\). Como o objetivo é simplificar os cálculos, buscamos atribuir valores que nos ajudem a atingir esse objetivo. Poderíamos calcular a potência   \(16^2\) atribuindo o valor \(19\) para \(x\) e \(-3\) para \(y\). Porém, note que quando formos calcular o termo \(x^2\) da expressão \(x^2 + 2xy + y^2\), estaremos calculando \(19^2\), que parece ser tão complicado quanto calcular \(16^2\).  
+
+\noindent Dessa maneira, poderíamos dizer que um produto notável é um produto entre variáveis que tem um resultado conhecido e que podemos utilizá-lo para simplificar nossos cálculos ou fatorar uma expressão. Falaremos mais sobre essa última parte na próxima seção.   
+
+\noindent \textbf{Resposta:} Sim, o resultado seria o mesmo por causa da propriedade comutativa da soma e da multiplicação com a expressão: \(x^2 + 2xy + y^2\). Isso quer dizer que: \(x^2 + 2xy + y^2 = y^2 + 2yx + x^2\), assim trocar o valor de \(x\) pelo valor de \(y\) e vice-versa não alterará o resultado. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                              OUTROS PRODUTOS NOTÁVEIS
+
+
+\section{Outros produtos notáveis}
+
+\noindent Vimos o produto notável   \((x+y)^2\). Vamos encontrar o valor do produto \((x - y)^2\). Para fazer isso, podemos olhar \((x - y)^2\) como \((x + (-y))^2\). A partir daí, podemos utilizar o produto notável que conhecemos para encontrar o valor do produto:  \((x - y)^2 = (x + (-y))^2 = x^2 + 2x(-y) + (-y)^2 = x^2 - 2xy + y^2\). Logo: \((x - y)^2 = x^2 - 2xy + y^2\).  %atribuindo determinados valores para   \(x  \( e para   \(y  \(. Seja   \(x = u  \( e   \(y = -v  \(, onde   \(u  \( e   \(v  \( são variáveis que representam números reais. Assim, temos que:   \((x+y)^2 = (u +(-v))^2 = u^2 + 2\cdot{u}\cdot{(-v)} + (-v)^2 = u^2 + (-2uv) + v^2 = u^2 - 2uv + v^2  \(. Isso quer dizer que   \((u - v)^2 = u^2 - 2uv + v^2  \(.% (seguindo a sugestão de diminuir o número de variáveis)
+Esse é outro produto notável. Que diferenças você consegue perceber entre ele e o produto notável   \((x+y)^2\)? 
+
+%\noindent Assim como para   \(x  \( e   \(y  \(,   \(u  \( e   \(v  \( também são variáveis. Assim, podemos atribuir valores para elas para calcular o resultado de outros produtos.  (trecho desnecessário)
+
+\noindent Vou utilizar o produto notável \((x-y)^2\) para mostrar uma outra resolução para o problema olímpico: 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                    RESOLUÇÃO
+\noindent \textbf{Resolução:}
+
+\noindent Temos as equações   \(a - b = 1\) e   \(ab = 1\) e queremos saber o valor de \(a^2 + b^2\). %Tome   \(u = a  \( e   \(v = b  \(. Logo o produto notável   \((u - v)^2  \( se torna   \((a - b)^2  \(%. (trecho desnecessário)
+Note que \((a-b)^2 = a^2 - 2ab + b^2\). A equação \(a - b = 1\) nos dá o valor de \(a - b\), desse modo, vamos substituir esse valor em   \((a-b)^2\). Obteremos a equação:   \((1)^2 = a^2 - 2ab + b^2\).  
+
+\noindent Essa equação pode ser reescrita como  \(1 = a^2 - 2ab + b^2\). Perceba que a expressão que queremos calcular está presente no lado direito da equação. Vamos isolá-la somando \(2ab\) em ambos os lados da equação. Obteremos: \(1 + 2ab = a^2 - 2ab + b^2 + 2ab\), ou seja, \(1 + 2ab = a^2 + b^2\). Já o valor de \(2ab\) pode ser encontrado através da equação \(ab = 1\).
+%Utilizando a propriedade 3 da igualdade para essa equação e multiplicando ambos os lados da equação por   \(2  \(, obteremos   \(2\cdot{ab} = 2\cdot{1}  \(, que pode ser escrita como   \(2ab = 2  \(.%  (trecho desnecessário)
+
+\noindent Substituindo o valor de \(ab\) na equação   \(1 + 2ab = a^2 + b^2\), obteremos   \(1 + 2\cdot{1} = a^2 + b^2\), portanto \(a^2 + b^2 = 1 + 2 = 3\). Esse foi o mesmo resultado que obtemos na primeira resolução. 
+
+\noindent Veja como foi muito mais simples responder o problema utilizando conhecimentos sobre produtos notáveis e uma boa sacada. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                         OUTROS PRODUTOS NOTÁVEIS + EXERCÍCIOS
+
+\noindent Não existem só esses dois produtos notáveis. Geralmente quando pesquisamos sobre o assunto no \textit{Google}, por exemplo, encontramos diversos outros produtos notáveis. Eu não acho necessário conhecer todo e qualquer produto notável, porém acho importante conhecer pelo menos os três produtos notáveis abaixo:
+
+\begin{enumerate}
+    \item   \((x+y)^2 = x^2 + 2xy + y^2\)
+    \item   \((x+y)\cdot{(x-y)} = x^2 - y^2\)
+    \item   \((x+y)(x^2 - xy + y^2) = x^3 + y^3\) 
+\end{enumerate}  
+
+
+\noindent Podemos derivar muitos outros produtos notáveis a partir desses três, como fizemos com \((x -y)^2\).  
+
+\noindent Como exercício, tente derivar ou fatorar, isto é: reescrever como uma multiplicação, os seguintes produtos notáveis ou expressões:
+
+\begin{enumerate}
+    \item   \((x+y)^3 =\)
+    \item   \((x-y)^3 =\)
+    \item   \((x + y + z)^2 =\)
+    \item   \(x^3 - y^3 =\)
+    \item   \(x^2 + y^2 =\)
+    
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                               RESPOSTAS DA SEÇÃO 3
+
+
+\noindent Dica: tente utilizar de algum modo os produtos notáveis listados acima (antes do exer\-cí\-cio). Você pode utilizar os dois lados das equações.  %escrevendo exercício como exer\-cí\-cio posso corrigir a divisão silábicas feita pelo LaTeX%
+
+\noindent \textbf{Respostas:}
+
+\begin{flushleft}
+ 1. \((x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3\) 
+    
+    2. \((x-y)^3 = x^3 - 3x^2y + 3xy^2 - y^3\)
+    
+     3. \((x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2xz + 2yz\)
+    
+     4. \(x^3 - y^3 = (x-y)\cdot{(x^2 + xy + y^2)}\) 
+    
+     5. Não é possível fatorar   \(x^2 + y^2\) utilizando apenas variáveis que representam números reais.
+\end{flushleft}
+   
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                     FATORAÇÃO  (Adicionei mais uma seção porque achei o texto desconexo da seção anterior)
+
+\section{Fatoração}
+
+\noindent Podemos dizer que quando fatoramos os termos de uma expressão estamos reescrevendo esses termos como uma multiplicação. Também podemos utilizar produtos notáveis para fatorar expressões, basta fazer o caminho inverso.  
+
+\noindent Por exemplo: vamos fatorar a expressão   \(t^3 + 3t^2 + 3t + 1 + 27u^3\). 
+
+\noindent Temos o produto notável \((x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3\). %Sendo   \(a = t  \( e   \(b = 1  \(% 
+Note que \((t+1)^3 = t^3 + 3t^2 + 3t + 1\). A expressão do lado direito da equação está presente na expressão que queremos fatorar. Desse modo, podemos substituir essa parte da expressão pelo produto \((t+1)^3\). Isto é:  
+
+\noindent  \[t^3 + 3t^2 + 3t + 1 + 27u^3 = (t^3 + 3t^2 + 3t + 1) + 27u^3 = (t+1)^3 + 27u^3\] 
+\noindent Acabamos de fatorar alguns dos termos da expressão original. Poderíamos parar por aí, sem nenhum problema, mas olhando para o resultado obtido, é possível observar que ainda podemos fatorar ainda mais. Fica como exercício para o leitor fatorar a expressão   \((t+1)^3 + 27u^3\). Dica: Use o produto notável   \((x+y)(x^2 - xy + y^2) = x^3 + y^3\).   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                        PROBLEMAS FINAIS
+
+\noindent Apesar de ter sido dito bastante sobre o assunto, ainda não o esgotamos. Nas referências é possível encontrar \textit{sites} para ler mais sobre o tema, caso seja de seu interesse. Gostaria de concluir o texto apresentando alguns problemas. Os problemas serão listados de acordo com o nível de dificuldade (do mais fácil ao mais difícil). Logo abaixo de cada problema haverá uma dica. Boa sorte!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESPOSTA - SEÇÃO 4
+
+\textbf{Resposta:}
+
+\begin{flushleft}
+
+1. \((t+1)^3 + 27u^3 = (t+3u+1)\cdot{((t+1)^2 + 3u\cdot{(t+1)} + 9u^2))}\)
+
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	SEÇÃO 5 - PROBLEMAS
+
+\section{Problemas}
+
+  	%\begin{enumerate}
+  	
+		%\item 
+\noindent		1. Qual é o valor da expressão \(\dfrac{242424^2 - 121212^2}{242424\cdot{121212}}\)
+		
+\begin{flushleft}	
+		
+(A)	\(\frac{1}{2}\)
+
+(B)	\(\frac{3}{4}\)
+
+(C)	\(1\)
+
+(D)	\(\frac{3}{2}\)
+
+(E)	\(\frac{7}{4}\) 
+
+\end{flushleft}
+
+\noindent Dica: Tente usar o produto notável \(x^2 - y^2 = (x + y)\cdot{(x - y)}\) \\ \\
+
+
+		%\item 
+\noindent		2. Somando \(1\) a um certo número natural, obtemos um múltiplo de \(11\). Subtraindo \(1\) desse mesmo número, obtemos um múltiplo de \(8\). Qual é o resto da divisão do quadrado desse número por \(88\)? \\ \\ 
+
+\begin{flushleft}
+
+(A)	\(0\)
+
+(B)	\(1\)
+
+(C)	\(8\)
+
+(D)	\(10\)
+
+(E)	\(80\) 
+
+\end{flushleft}
+
+\noindent Dica: \(398 = \textbf{3}\cdot{132} + \textcolor{red}{2}\). Isso quer dizer que o resto da divisão de \(398\) por \(\textbf{3}\) é \(\textcolor{red}{2}\). Possa ser que seja necessário utilizar um raciocínio semelhante para responder o problema. 
+
+%\begin{flushleft}
+
+		%\item 
+\noindent		3. A soma de dois números é \(3\) e a soma de seus cubos é \(25\). Qual é a soma de seus quadrados?
+
+\begin{flushleft}
+
+(A)	\(\frac{77}{9}\)
+
+(B)	\(\frac{99}{7}\)	
+
+(C)	\(7\)
+
+(D)	\(9\)
+
+(E)	\(\frac{7}{9}\) 
+
+\end{flushleft}
+
+\noindent Dica: Uma resolução para esse problema é bem semelhante à segunda resolução apresentada para o problema olímpico. 
+
+%
+
+		%\item 
+\noindent		4. Sabendo-se que \(\dfrac{x^2 + y^2}{(x + y)^2} = \dfrac{7}{12}\), qual é o valor de \(\dfrac{x}{y} + \dfrac{y}{x}\)?
+
+\begin{flushleft}
+
+(A)	\(2,0\)
+
+(B)	\(2,2\)
+
+(C)	\(2,4\)
+
+(D)	\(2,6\)
+
+(E)	\(2,8\) 
+
+\end{flushleft}
+
+\noindent Dica: Talvez ajude se você reescrever a fração desejada de outro modo. \\ \\ 
+
+%
+
+		%\item 
+\noindent		5. \textit{(Adaptado)} O número irracional   \(\sqrt{3 - 2\cdot{\sqrt{2}}}\) é igual a: \\ \\
+
+\begin{flushleft}
+
+(A)   \(\sqrt{3} - 1\)
+        
+(B)   \(\sqrt{2} - 1\)
+        
+(C)   \(\sqrt{2} + 1\)
+        
+(D)   \(1 - \sqrt{2}\)
+        
+(E) Nenhuma das alternativas acima		
+
+\end{flushleft}
+
+\noindent Dica: Tente utilizar o produto notável \((x - y)^2\). \\
+
+		%\item 
+\noindent		6. Qual é a soma dos algarismos do número \(\sqrt{1111111111 - 22222}\) ?
+
+\begin{flushleft}
+
+(A)	10
+
+(B)	15
+
+(C)	18
+
+(D)	20
+
+(E)	25 
+
+\end{flushleft}
+
+\noindent Dica: Note que \(\dfrac{10^{10} - 1}{9} = 1111111111\). 
+
+%\begin{flushleft}
+
+		%\item 
+\noindent		7. Se \(a + b + c = 0\), calcule \(M = \dfrac{(a + b)^3 + (b + c)^3 + (a + c)^3}{abc}\) 
+
+%\end{flushleft}
+
+\noindent Dica: Tente utilizar a equação \(a + b + c = 0\) para rescrever cada termo do numerador da fração \(M\).
+
+\noindent Nas referências é possível encontrar resoluções para alguns dos problemas.
+
+	%\end{enumerate}
+    
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                          RESPOSTAS DA SEÇÃO 5
+
+\noindent \textbf{Respostas:}
+\begin{flushleft}
+1. Alternativa D.
+
+2. Alternativa B.
+
+3. Alternativa C.
+
+4. Alternativa E.
+
+5. Alternativa B.
+
+6. Alternativa B.
+
+7. \(M = -3\)
+
+\end{flushleft}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+
+\section{Referências}
+
+\noindent No \textit{site} da OBMEP é possível encontrar a resolução de questões de suas provas.
+
+\begin{itemize}
+
+\item	\textbf{\textit{Site} da OBMEP: }
+
+	\url{http://www.obmep.org.br/provas.htm}
+	
+\item   \textbf{Problema Olímpico (OBMEP - 2017 - fase 1 - nível 3 - questão 2): }
+
+    \url{https://tinyurl.com/y56k9yz9}
+    %\url{https://drive.google.com/file/d/1O_nEyPi-LqlBE7aZYgB6CXclkPhL7qXO/view}  o link acabou ficando grande para a página
+
+\item   \textbf{Problemas da última seção:} 
+
+\textbf{1. OBMEP - 2018 - fase 1 - nível 2 - questão 7:}
+
+\url{https://tinyurl.com/y2a9gly9}
+
+\textbf{2. OBMEP - 2017 - fase 1 - nível 3 - questão 6:}
+
+\url{https://tinyurl.com/y56k9yz9}
+
+\textbf{3. OBMEP - 2015 - fase 1 - nível 3 - questão 7:}
+
+\url{https://tinyurl.com/y5gltozj}
+
+\textbf{4. OBMEP - 2018 - fase 1 - nível 3 - questão 7:}
+
+\url{https://tinyurl.com/yygonlmp}
+
+\textbf{5. Problema de origem incerta:}
+
+\url{https://www.youtube.com/watch?v=naGkELTaSuQ&} 
+
+\textbf{6. OBMEP - 2019 - fase 1 - nível 3 - questão 10:}
+
+\url{https://tinyurl.com/y63x9cnf}
+
+\textbf{7. Problema de origem incerta:}
+ 
+\url{https://www.youtube.com/watch?v=5CBHAfqsPfk}
+    
+\item   \textbf{Expressões algébricas e polinômios:} 
+
+    \url{https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=13&a=1}
+
+%\url{https://brasilescola.uol.com.br/o-que-e/matematica/o-que-e-expressao-algebrica.htm} link acabou ficando muito grande para a página. Utilizei o site TinyURL.com para compactá-lo
+    \url{https://tinyurl.com/yy6srkyh}
+
+    \url{https://www.todamateria.com.br/expressoes-algebrica/} 
+
+\item   \textbf{Produtos notáveis:} 
+
+    \url{https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=14}
+
+    \url{https://pt.wikipedia.org/wiki/Produtos_not\%C3\%A1veis}
+
+    \url{https://www.todamateria.com.br/produtos-notaveis/}
+
+    \url{https://brasilescola.uol.com.br/matematica/produtos-notaveis.htm}
+
+    \url{https://mundoeducacao.uol.com.br/matematica/produtos-notaveis.htm} 
+
+\item   \textbf{Propriedades da igualdade:} 
+
+    \url{https://maestrovirtuale.com/propriedades-da-igualdade/}
+
+    \url{https://en.wikipedia.org/wiki/Equality_(mathematics)} 
+\end{itemize}
+
+\end{document}
